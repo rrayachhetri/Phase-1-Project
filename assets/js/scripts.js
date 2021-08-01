@@ -6,60 +6,113 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const answerButtonsElement = document.getElementById('answer-buttons')
 
+
 fetch("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=multiple")
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (response) {
-        console.log(response.results);
-        for (let index = 0; index < 10; index++) {
-        var answers = [response.results[index].correct_answer + "," + response.results[index].incorrect_answers]; 
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (response) {
+    let data = response;
+    // console.log(data); 
+    useApiData(data);
+  })
 
-        console.log(response.results[index].question)
-        console.log (answers);
-        console.log (response.results[index].correct_answer)
-        }})
-
-
-const questions = [
+function useApiData(data) {
+  const questions = [
     {
-      question: 'What is 2 + 2?',
+      question: (data.results[0].question),
       answers: [
-        { text: '4', correct: true },
-        { text: '22', correct: false }
+        { text: (data.results[0].correct_answer), correct: true },
+        { text: (data.results[0].incorrect_answers[0]), correct: false },
+        { text: (data.results[0].incorrect_answers[1]), correct: false },
+        { text: (data.results[0].incorrect_answers[2]), correct: false }
       ]
     },
     {
-      question: 'Who is the best YouTuber?',
+      question: (data.results[1].question),
       answers: [
-        { text: 'Web Dev Simplified', correct: true },
-        { text: 'Traversy Media', correct: true },
-        { text: 'Dev Ed', correct: true },
-        { text: 'Fun Fun Function', correct: true }
+        { text: (data.results[1].correct_answer), correct: true },
+        { text: (data.results[1].incorrect_answers[0]), correct: false },
+        { text: (data.results[1].incorrect_answers[1]), correct: false },
+        { text: (data.results[1].incorrect_answers[2]), correct: false }
       ]
     },
     {
-      question: 'Is web development fun?',
+      question: (data.results[2].question),
       answers: [
-        { text: 'Kinda', correct: false },
-        { text: 'YES!!!', correct: true },
-        { text: 'Um no', correct: false },
-        { text: 'IDK', correct: false }
+        { text: (data.results[2].correct_answer), correct: true },
+        { text: (data.results[2].incorrect_answers[0]), correct: false },
+        { text: (data.results[2].incorrect_answers[1]), correct: false },
+        { text: (data.results[2].incorrect_answers[2]), correct: false }
       ]
     },
     {
-      question: 'What is 4 * 2?',
+      question: (data.results[3].question),
       answers: [
-        { text: '6', correct: false },
-        { text: '8', correct: true }
+        { text: (data.results[3].correct_answer), correct: true },
+        { text: (data.results[3].incorrect_answers[0]), correct: false },
+        { text: (data.results[3].incorrect_answers[1]), correct: false },
+        { text: (data.results[3].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[4].question),
+      answers: [
+        { text: (data.results[4].correct_answer), correct: true },
+        { text: (data.results[4].incorrect_answers[0]), correct: false },
+        { text: (data.results[4].incorrect_answers[1]), correct: false },
+        { text: (data.results[4].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[5].question),
+      answers: [
+        { text: (data.results[5].correct_answer), correct: true },
+        { text: (data.results[5].incorrect_answers[0]), correct: false },
+        { text: (data.results[5].incorrect_answers[1]), correct: false },
+        { text: (data.results[5].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[6].question),
+      answers: [
+        { text: (data.results[6].correct_answer), correct: true },
+        { text: (data.results[6].incorrect_answers[0]), correct: false },
+        { text: (data.results[6].incorrect_answers[1]), correct: false },
+        { text: (data.results[6].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[7].question),
+      answers: [
+        { text: (data.results[7].correct_answer), correct: true },
+        { text: (data.results[7].incorrect_answers[0]), correct: false },
+        { text: (data.results[7].incorrect_answers[1]), correct: false },
+        { text: (data.results[7].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[8].question),
+      answers: [
+        { text: (data.results[8].correct_answer), correct: true },
+        { text: (data.results[8].incorrect_answers[0]), correct: false },
+        { text: (data.results[8].incorrect_answers[1]), correct: false },
+        { text: (data.results[8].incorrect_answers[2]), correct: false }
+      ]
+    },
+    {
+      question: (data.results[9].question),
+      answers: [
+        { text: (data.results[9].correct_answer), correct: true },
+        { text: (data.results[9].incorrect_answers[0]), correct: false },
+        { text: (data.results[9].incorrect_answers[1]), correct: false },
+        { text: (data.results[9].incorrect_answers[2]), correct: false }
       ]
     }
   ]
 
-  console.log(questions)
 
-// //Variable Declarations
-// var amount = 10;
+var amount = 10;
 
 let shuffledQuestions, currentQuestionIndex
 
@@ -138,4 +191,6 @@ function clearStatusClass(element) {
 // alert($(window).width());
 
 //DOM Event Listeners
-card.click(() => card.toggleClass("is-flipped__Y"));
+card.click(() => card.toggleClass("is-flipped__Y")); 
+
+};
