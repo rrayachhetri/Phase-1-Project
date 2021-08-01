@@ -71,6 +71,11 @@ main {
     font-size:32px;
 }
 
+.card-face {
+    color: white;
+    font-size:32px;
+}
+
 .card_face-back__Y {
     background-color: var(--light);
     transform: rotateY(180deg);
@@ -148,7 +153,7 @@ Form {
     margin-top: 23vh;
 }
 
-Form button {
+button {
     color:white;
     font-weight: 600;
     margin: 10px 0;
@@ -161,7 +166,11 @@ Form button {
     background-image: linear-gradient(to left, blue,purple);
 }
 
-form button:hover {
+.hide {
+    display: none;
+}
+
+button:hover {
     background-image: linear-gradient(to right, blue,purple);
 }
 
