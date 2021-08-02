@@ -19,7 +19,7 @@ var fetch_questions = () => {
   .then(function (data) {
     // useApiData(data);
     setNextQuestion(data.results);
-    global_data = data;
+    global_data = value.results;
   });
 };
 
@@ -82,7 +82,11 @@ function get_answers (data) {
 };
 
 function selectAnswer(e) {
-  const selectedButton = e.target
+  const selectedButton = e.target.getAttribute("data-value")
+  currentQuestionIndex++
+
+  setNextQuestion(global_data);
+  console.log(e.target);
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
   Array.from(answerButtonsElement.children).forEach(button => {
