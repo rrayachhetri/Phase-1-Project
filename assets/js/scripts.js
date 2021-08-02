@@ -13,7 +13,7 @@ fetch("https://opentdb.com/api.php?amount=10&category=20&difficulty=medium&type=
   })
   .then(function (response) {
     let data = response;
-    // console.log(data); 
+    console.log(data); 
     useApiData(data);
   })
 
@@ -110,7 +110,7 @@ function useApiData(data) {
       ]
     }
   ]
-
+console.log (questions);
 
 var amount = 10;
 
