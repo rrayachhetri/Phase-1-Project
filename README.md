@@ -1,5 +1,5 @@
 # Phase-1-Project# Phase-1-Project
-​
+
 API’s
 https://opentdb.com/api_config.php
 ## API’s to use
@@ -7,6 +7,7 @@ https://opentdb.com/api_config.php
 -	Correct answer will give you Wikipedia page for more info
 -	Maybe Giphy (wrong answer will mock you)
 -	Thesaurus 
+
 ## User Input
 -	User-name
 -	#of questions (10 default questions)
@@ -16,7 +17,7 @@ https://opentdb.com/api_config.php
 -	Card flip animation
 -	Framework Layout
 -	Footer with our contact info
-​
+
 ## JavaScript
 -	Card logic
 -	Game logic
