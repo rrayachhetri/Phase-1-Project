@@ -4,9 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Webpage</title>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <title>Trivia Master Deluxe Game</title>
 </head>
-<body>
-    
+<body >
+    <main>
+        <div class="pure-g">
+            <div class="pure-u-xl-1-3 pure-u-xl-1-5 pure-u-lg-1-2">
+        <!-- Card Content -->
+        <div id="question-container" class="card_container"> <!--Card container Will handle perspective-->
+            <div class="inner"> <!--Will do flipping-->
+                <div id="question" class="card-face card_face-front"> <!--Front Face-->
+                    <h2>Welcome to Trivia Master Deluxe Game <br> <br>Click Start to begin</h2>
+                </div>
+                <div class="card-face card_face-back__Y"> <!--Back Face-->
+                    <div class="card-content"> <!--Back Content-->
+                        <div class="card-header">
+                            <img src="./assets/img/Family.PNG" class="img" alt="">
+                            <h2>Family!</h2>
+                        </div>
+                        <div class="card-body">
+                            <h3>Toretto:</h3>
+                            <p>You might  be strong! But nothing is stronger than family!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Card Content -->
+            </div>
+            <div id="response-container" class="pure-u-xl-1-5 pure-u-xl-1-5 pure-u-lg-1-2">
+            <!-- Response Content -->
+            <!-- Buttons with possible answer....should be created dynamically depending on amount of answers -->
+            <div id="answer-buttons" class="pure-form">
+                <button value="wrong">A</button>
+                <button value="wrong">B</button>
+                <button value="correct">C</button>
+                <button value="wrong">D</button>
+            </div>
+            <div class="control">
+                <button id="start-btn" class="start-btn btn">Start</button>
+                <button id="next-btn" class="next-btn btn hide">Next</button>
+            </div>
+
+
+            <!-- End Button Content -->
+            </div>
+        </div> 
+    </main>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="./assets/js/scripts.js"></script>
 </body>
 </html>
