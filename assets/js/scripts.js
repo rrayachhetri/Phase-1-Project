@@ -19,7 +19,7 @@ var fetch_questions = () => {
   .then(function (data) {
     // useApiData(data);
     setNextQuestion(data.results);
-    global_data = value.results;
+    global_data = data.results;
   });
 };
 
@@ -37,7 +37,9 @@ function setNextQuestion(data) {
 };
 
 function showQuestion(data) {
+  console.log(data);
   questionElement.innerText = data[currentQuestionIndex].question;
+  console.log (data[currentQuestionIndex].question);
     answer_array = get_answers(data);
     for(var i = 0; i < answer_array.length; i++)
     {
@@ -82,23 +84,37 @@ function get_answers (data) {
 };
 
 function selectAnswer(e) {
+ 
   const selectedButton = e.target.getAttribute("data-value")
-  currentQuestionIndex++
 
+  // console.log (selectedButton)
+  
+  //correct
+
+  //incorrect 
+
+
+  
+  if (currentQuestionIndex < 9) {
+  currentQuestionIndex++
+  console.log(currentQuestionIndex);
   setNextQuestion(global_data);
-  console.log(e.target);
-  const correct = selectedButton.dataset.correct
-  setStatusClass(document.body, correct)
-  Array.from(answerButtonsElement.children).forEach(button => {
-    setStatusClass(button, button.dataset.correct)
-  })
-  if (shuffledQuestions.length > currentQuestionIndex + 1) {
-    nextButton.classList.remove('hide')
-  } else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
   }
-};
+}; 
+
+
+  // const correct = selectedButton.dataset.correct
+  // setStatusClass(document.body, correct)
+  // Array.from(answerButtonsElement.children).forEach(button => {
+  //   setStatusClass(button, button.dataset.correct)
+  // })
+  // if (  > currentQuestionIndex + 1) {
+  //   nextButton.classList.remove('hide')
+  // } else {
+  //   startButton.innerText = 'Restart'
+  //   startButton.classList.remove('hide')
+  // }
+// };
 
 function setStatusClass(element, correct) {
   clearStatusClass(element)
@@ -116,8 +132,11 @@ function clearStatusClass(element) {
 
 //DOM Event Listeners
 card.click(() => card.toggleClass("is-flipped__Y")); 
+
+
 startButton.addEventListener('click', startGame)
 nextButton.addEventListener('click', () => {
   currentQuestionIndex++
   setNextQuestion(global_data);
 });
+
