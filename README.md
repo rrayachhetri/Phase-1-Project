@@ -1,38 +1,60 @@
-# Phase-1-Project# Phase-1-Project
+# Trivia Master Deluxe Game
+## Description 
+This project was designed to illustrate the use of HTML, CSS, JavaScript, API, modals. It will get the information from the user within a model,will fetch to receive and provide questions and collect user input to determine whether the answers to a question are correct,this then generates a score and appends to a final page of results as a modal. 
+
+
+[!link] {gif image}
+
+
+## Github Repo and Website link 
+ - 
+ - 
+## features 
+- Two Modals
+- Two APIs
+- Two HTML 
+    - contians landing page
+    - contains modals 
+- highschores
+    - local storage 
+- Javascript Page * Contains: * Variables, including arrays with object * Event listeners * if/else if statements * For Loops * Functions * Local Storage
+
+## Resources and API
+### API
+- Trivia 
+    - [https://opentdb.com/api_config.php](https://opentdb.com/api_config.php)
+- Wiki 
+ - [wiki]("wiki ")
+### CSS 
+- https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css
+- 
+- 
+### font
+- https://fonts.googleapis.com/css?family=Montserrat
+
+## This project has media Queries for:
+- max-width: 980px
+    - Adjusts body and container width
+- max-width: 786px
+    - Adjusts body and container width
+- Adjusts buttons
+    - max-width: 640px
+- Adjusts body and container width
+    - Adjusts buttons to be centered and stacked
+
+
+## Authors 
+- Juan Jose Paz 
+- Rabib 
+- Jordana 
+- Mohammad 
+
+## Room for Improvement 
+- Adding timer to the Quiz App 
+- improve the CSS frames 
+- Userinput to choose category and level of diffculty 
+
 ​
-API’s
-https://opentdb.com/api_config.php
-## API’s to use
--	Trivia API - Category: Mythology
--	Correct answer will give you Wikipedia page for more info
--	Maybe Giphy (wrong answer will mock you)
--	Thesaurus 
-## User Input
--	User-name
--	#of questions (10 default questions)
--	Difficulty
-## CSS
--	Header with cool title
--	Card flip animation
--	Framework Layout
--	Footer with our contact info
-​
-## JavaScript
--	Card logic
--	Game logic
--	Fetch for API’s
-Collapse
-
-fkadslhfkadsjfha djsk h
-hkdfsjglkfdhgkdsfjghkj
-
-
-Send a message to Jordana Bravo, Juan José Paz, Rabin Raya Chettri
-
-
-
-
-
 
 
 
