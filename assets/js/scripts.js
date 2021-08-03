@@ -23,6 +23,45 @@ var fetch_questions = () => {
   });
 };
 
+var fetchHappy = "Happy"
+var image = document.querySelector("#image-src")
+var fetch_gify_correct = () => {
+  fetch(
+    `https://api.giphy.com/v1/gifs/search?q= 
+      ${fetchHappy}
+      &api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=5`
+  )
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      //console.log(response.data[1].images.original.url);
+    var imageUrl = response.data[1].images.original.url;
+      image.setAttribute("src", imageUrl);
+    })
+}
+
+(fetch_gify_correct());
+
+// var fetchSad = "Sad"
+// var fetch_gify_wrong = () => {
+//   fetch(
+//     `https://api.giphy.com/v1/gifs/search?q= 
+//       ${fetchSad}
+//       &api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=5`
+//   )
+//     .then(function(response) {
+//       return response.json();
+//     })
+//     .then(function(response) {
+//       //console.log(response.data[1].images.original.url);
+//     var imageUrl = response.data[1].images.original.url;
+//       image.setAttribute("src", imageUrl);
+//     })
+// }
+
+// (fetch_gify_wrong());
+
 // alert($(window).width());
 
 function startGame() {
