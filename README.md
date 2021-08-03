@@ -1,4 +1,4 @@
-# Phase-1-Project
+# Phase-1-Project# Phase-1-Project
 
 API’s
 https://opentdb.com/api_config.php
@@ -12,7 +12,6 @@ https://opentdb.com/api_config.php
 -	User-name
 -	#of questions (10 default questions)
 -	Difficulty
-
 ## CSS
 -	Header with cool title
 -	Card flip animation
@@ -23,3 +22,20 @@ https://opentdb.com/api_config.php
 -	Card logic
 -	Game logic
 -	Fetch for API’s
+Collapse
+
+fkadslhfkadsjfha djsk h
+hkdfsjglkfdhgkdsfjghkj
+
+
+Send a message to Jordana Bravo, Juan José Paz, Rabin Raya Chettri
+
+
+
+
+
+
+
+
+
+
