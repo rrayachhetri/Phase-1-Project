@@ -252,9 +252,16 @@ button:hover {
     background-color: #4DA8DA;
 }
 
+.gif {
+    margin-top:  15px;
+    width: 100%;
+}
 
 
 
 
-
-
+@media screen and (max-width: 680px) {
+.modal-content {
+ width: 100%;
+}
+}
