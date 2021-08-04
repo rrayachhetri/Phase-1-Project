@@ -260,5 +260,8 @@ button:hover {
 
 
 
-
-
+@media screen and (max-width: 680px) {
+.modal-content {
+ width: 100%;
+}
+}

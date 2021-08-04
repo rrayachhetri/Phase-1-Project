@@ -7,7 +7,7 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 
 ## Github Repo and Website link 
- - 
+ [!https://github.com/darkjuanjo/Phase-1-Project](https://github.com/darkjuanjo/Phase-1-Project)
  - 
 ## features 
 - Two Modals
@@ -45,9 +45,9 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 ## Authors 
 - Juan Jose Paz 
-- Rabib 
-- Jordana 
-- Mohammad 
+- Rabib Raya Chhetri 
+- Jordana Bravo
+- Mohammad Javid Moradi 
 
 ## Room for Improvement 
 - Adding timer to the Quiz App 

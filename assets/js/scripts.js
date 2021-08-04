@@ -11,15 +11,25 @@ const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
 const correctAnswer = document.getElementById("correct"); 
 const incorrectAnswer = document.getElementById("incorrect"); 
-
-gameContainerEl.classList.add('hide');
+// var nextButton = document.createElement("button"); 
+const correctAnswers = document.getElementById ("correctAnswers"); 
+const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
 
 
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
 var player;
-var correct_answers, incorrect_answers; 
+var correct_answers = 0;
+var incorrect_answers = 0;
+
+
+gameContainerEl.classList.add('hide');
+// nextButton.id = "next-btn";
+// nextButton.classList = "next-btn btn hide"; 
+// nextButton.textContent = "Next";
+correctAnswers.textContent = "Correct answers : " + correct_answers; 
+incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers; 
 
 var fetch_questions = (category,difficulty,amount) => {
     var URL = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
@@ -57,6 +67,7 @@ function setNextQuestion(data) {
 };
 
 function showQuestion(data) {
+  console.log (data);
   questionElement.innerText = data[currentQuestionIndex].question;
     answer_array = get_answers(data);
     for(var i = 0; i < answer_array.length; i++)
@@ -101,34 +112,53 @@ function get_answers (data) {
   return answers;
 };
 
-var fetch_qify = () => {
-  fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+var fetch_gify = () => {
+  fetch('https://api.giphy.com/v1/gifs/search?q=correct&rating=pg&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1')
     // Convert the response to JSON
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
-      
-      gifImg.setAttribute('src', response.data.image_url);
+      gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
       backContent.appendChild(gifImg);
-      
-})};
+      backContent.appendChild(correctAnswers);
+      backContent.appendChild(incorrectAnswers);
+      backContent.appendChild(nextButton);
+      })
+    };
+
+  var fetch_gify_sad = () => {
+      fetch('https://api.giphy.com/v1/gifs/search?q=wrong&rating=pg&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1')
+        // Convert the response to JSON
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(response) {
+          gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
+          backContent.appendChild(gifImg);
+          backContent.appendChild(correctAnswers);
+          backContent.appendChild(incorrectAnswers);
+          backContent.appendChild(nextButton);
+          })
+        };
 
 function selectAnswer(e) {
- 
-  const selectedButton = e.target.getAttribute("data-value");
- 
-if (selectedButton === 'correct'){
-    correct_answers = correct_answers + 1 ; 
+  const selectedButton = e.target.getAttribute("data-value"); 
+if (selectedButton === 'correct'){   
+  correct_answers = correct_answers + 1; 
+  correctAnswers.textContent = "Correct answers : " + correct_answers; 
+  incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers;  
+  fetch_gify(); 
 }
+
 else{ 
   incorrect_answers = incorrect_answers + 1; 
+  correctAnswers.textContent = "Correct answers : " + correct_answers; 
+  incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers; 
+  fetch_gify_sad(); 
 }
 
 if (currentQuestionIndex < global_data.length-1) {
-  fetch_qify();
-  // correctAnswer.appendChild ("Correct : ")
-  // incorrectAnswer.appendChild ("IncorrectAnswer : ")
   card.toggleClass("is-flipped__Y")
   nextButton.classList.remove('hide')
   }
@@ -136,8 +166,6 @@ else {
     startButton.innerText = 'Restart'
     startButton.classList.remove('hide')
     }
-  
-
   }; 
 
 
@@ -159,7 +187,10 @@ function clearStatusClass(element) {
 card.click(() => card.toggleClass("is-flipped__Y")); 
 startButton.addEventListener('click', startGame); 
 nextButton.addEventListener('click', () => {
-  card.toggleClass("is-flipped__Y")
-currentQuestionIndex++
+console.log ("click"); 
+card.toggleClass("is-flipped__Y")
+currentQuestionIndex++;
 setNextQuestion(global_data);
 });
+
+
