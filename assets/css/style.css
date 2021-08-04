@@ -4,8 +4,8 @@
 }
 
 :root {
-    --primary: yellow;
-    --secondary: red;
+    --primary: #7986cb;
+    --secondary: #283593;
     --dark: black;
     --light: white;
        background-image: url("../img/background.png");
@@ -13,7 +13,7 @@
 
 body {
     /* background-image: url("../img/background.png"); */
-    background-color: #DCE1E3;
+    background-color: #03a9f4;
     font-family: Montserrat, sans-serif;
     width: 100%;
     min-height: 100vh;
@@ -29,14 +29,14 @@ body {
     height: 100%;
     overflow: hidden;
     background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+    background-color: #03a9f4;
 }
 
 /* Modal Content */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #7986cb;
     margin: 10% auto;
-    border: 1px solid blue; /*#888*/
+    border: 1px solid blueviolet; /*#888*/
     border-radius: 10px;
     width: 50%;
     height: 50%;
@@ -241,7 +241,7 @@ button {
     border: none;
     border-radius: 15px;
     /* background-image: linear-gradient(to left, blue,purple); */
-    background-color: #004E7C;
+    background-color: #0d47a1;
 }
 
 .hide {
@@ -250,7 +250,7 @@ button {
 
 button:hover {
     /* background-image: linear-gradient(to right, blue,purple); */
-    background-color: #4DA8DA;
+    background-color: #00897b;
 }
 
 .gif {
