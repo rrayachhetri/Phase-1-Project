@@ -257,93 +257,191 @@ button:hover {
 
 
 /* Media queries  */
-
-/* Mobile */
-@media (max-width: 980px)  {
-    #start-btn  {
-        position: relative;
-        right: 200px;
-        bottom: 55px;
-}
-  #player_name {
-        width: 70%;
-       margin: 4px;
-        
-    }
-    
-  
-   #trivia_category {
-       width: 70%;
-       text-align: center;
-   }
-    
-    #question-container {
-       position: relative;
-       left: 56px;
-               
-    }    
-    }
-
- /* Tablet */
-@media (max-width: 480px)
- { #start-btn  {
-        position: relative;
-        right: 200px;
-        bottom: 55px;
-}
-  #player_name {
-        width: 70%;
-       margin: 4px;
-        
-    }
-    
-  
-   #trivia_category {
-       width: 70%;
-       text-align: center;
-   }
-    
-    #question-container {
-       position: relative;
-       left: 56px;
-               
-   
-}
-
-
-/* Desktop */
-
-
 @media screen and (min-width: 1025px) {
-
-   #start-btn  {
-     margin:0;
-     color: red;
-        
+   label {
+    font-weight: bold;
+    font-size: 1rem;
 }
-  #player_name {
-        width: 70%;
-       margin: 4px;
-        
-    }
-    
+   #start-btn   {
+    margin:0;
+    margin-top: 37px;
+
+   }
   
+   #answer-buttons {
+      padding-left: 120px;
+   }
+ 
+  #player_name {
+        width: 50%;
+       margin: 4px;
+       
+    }
+    #player_name, option  {
+      font-size: 1.1rem;
+      height: 7%;
+}
+  select {
+     height: 1.5rem;
+     font-size: 1rem;
+     width:50%;
+}
+
    #trivia_category {
        width: 70%;
        text-align: center;
+       
    }
     
+
     #question-container {
        position: relative;
        left: 56px;
                
    
 }
+ #trivia_amount{
+    font-size: 1rem;
+    height: 1.2rem;
+}
 
 }
+
+/*tab */
+@media screen and (max-width: 1024px) {
+   label {
+    font-weight: bold;
+    font-size: 1rem;
+}
+   #start-btn   {
+    margin:0;
+    margin-top: 37px;
+
+   }
+  
+   #answer-buttons {
+      padding-left: 120px;
+   }
+ 
+  #player_name {
+        width: 50%;
+       margin: 4px;
+       
+    }
+    #player_name, option  {
+      font-size: 1.1rem;
+      height: 7%;
+}
+  select {
+     height: 1.5rem;
+     font-size: 1rem;
+     width:50%;
+}
+
+   #trivia_category {
+       width: 70%;
+       text-align: center;
+       
+   }
     
 
+    #question-container {
+       position: relative;
+       left: 56px;
+               
+   
+}
+ #trivia_amount{
+    font-size: 1rem;
+    height: 1.2rem;
+}
+
+}
+
+/* iphone */
+   @media screen and (max-width: 414px) {
+   label {
+    font-weight: bold;
+    font-size: .7rem;
+}
+  #category-container {
+      margin-top: 10px;
+      
+  }
+#greeting {
+    margin-top:10px;
+    font-size: 19px;
+}
+
+   button {
+     width: auto;
+   }
+   #start-btn   {
+    margin:0;
+    margin-top: 25px;
+    min-width: 10rem;
     
+   }
+  
+   #answer-buttons {
+      padding-left: 40px;
+   }
+ 
+  #player_name {
+        width: 70%;
+       margin: 4px;
+       
+    }
+    #player_name, option  {
+      font-size: 1.1rem;
+      height: 7%;
+}
+  select {
+     height: 1.5rem;
+     font-size: 1rem;
+     width:70%;
+}
+
+   #trivia_category {
+       width: 70%;
+       text-align: center;
+       
+   }
+    
+
+    #question-container {
+       position: relative;
+       left: 56px;
+               
+   
+}
+ #trivia_amount{
+    font-size: 1rem;
+    height: 1.2rem;
+}
+.card_container {
+    
+    width: 200px;
+    height: 400px;
+    
+} 
+
+    
+.card-face h2 {
+    color: white;
+    font-size:32px;
+}
+
+.card-face {
+    color: white;
+    font-size:25px;
+
+}
+main {
+    padding-top: 10vh;
+    padding-left:10vw;
+}
+   }
 
 
 
