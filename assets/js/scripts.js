@@ -109,9 +109,34 @@ function get_answers (data) {
       type: "incorrect"
     }
   ];
-
+  answers = randomize(answers);
   return answers;
 };
+//Randomize answers
+var randomize = function(array){
+  var new_array = [];
+  var temp_array = array;
+  for(var i = 0; i < array.length; i++)
+  {
+      var index = Math.floor(Math.random()*temp_array.length);
+      new_array.push(temp_array[index]);
+      temp_array = removefromArray(temp_array[index],temp_array);
+  }
+  return new_array;
+};
+
+//Removes Items from Array
+var removefromArray = function(value,array) {
+  new_array = [];
+  for(var i = 0; i < array.length; i++)
+  {
+      if(array[i] !== value)
+      {
+          new_array.push(array[i]);
+      }
+  }
+  return new_array;
+  };
 
 var fetch_gify = () => {
   fetch('https://api.giphy.com/v1/gifs/search?q=correct&rating=pg&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1')
