@@ -81,11 +81,10 @@ main {
     background-color: var(--light);
     transform: rotateY(180deg);
 }
-/* no card_face-back_X in html #RABIN */
-/* .card_face-back__X {
+ .card_face-back__X {
     background-color: var(--light);
     transform: rotateX(180deg);
-} */
+} 
 
 .card-content {
   
@@ -181,21 +180,23 @@ button:hover {
 /* Mobile */
 @media (max-width: 480px) {
        
-         .card-container, #question, .card-face, .card_face-front {
+         .card_container,  #question, .card-face, .card_face-front {
             position: absolute;
-            right:40px;
+            right: 70px;
             display: flex;
-            justify-content: center;
-             
+            flex-wrap: wrap;
+            flex-basis: 200px;
+            flex-shrink: 1;
+            flex-grow: 1;
+            width: 200px;
+            height: 150px;
+          }
 
-            
-        } 
-
-    
+        
         .card-content {
-            position: relative;
+            position: relative; 
             right: 80px;
-            display: flex;
+            display: ;
             justify-content: center;
         }
         
@@ -217,7 +218,7 @@ button:hover {
 @media (min-width: 1025px) {
     
 
-
+r
 
 
 
