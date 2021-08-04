@@ -258,6 +258,14 @@ button:hover {
 }
 
 
+@media screen and (max-width: 980) {
+    start-btn { 
+        align-items:  left;
+    }
+    .modal-content {
+     width: 100%;
+    }
+    }
 
 
 @media screen and (max-width: 680px) {

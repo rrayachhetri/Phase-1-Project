@@ -66,7 +66,6 @@ function setNextQuestion(data) {
 };
 
 function showQuestion(data) {
-  console.log (data);
   questionElement.innerText = data[currentQuestionIndex].question;
     answer_array = get_answers(data);
     for(var i = 0; i < answer_array.length; i++)
@@ -158,6 +157,7 @@ else{
 }
 
 if (currentQuestionIndex < global_data.length-1) {
+  resetState(); 
   card.toggleClass("is-flipped__Y")
   nextButton.classList.remove('hide')
   }
@@ -185,9 +185,7 @@ function clearStatusClass(element) {
 //DOM Event Listeners
 // card.click(() => card.toggleClass("is-flipped__Y")); 
 startButton.addEventListener('click', startGame); 
-nextButton.addEventListener('click', () => {
-console.log ("click"); 
-debugger;
+nextButton.addEventListener('click', () => { 
 card.toggleClass("is-flipped__Y");
 currentQuestionIndex++;
 setNextQuestion(global_data);
