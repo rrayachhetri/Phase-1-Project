@@ -13,6 +13,7 @@ const correctAnswer = document.getElementById("correct");
 const incorrectAnswer = document.getElementById("incorrect");  
 const correctAnswers = document.getElementById ("correctAnswers"); 
 const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
+const totalPlayed = document.getElementById ("total_games_played"); 
 
 
 //Global Variable
@@ -21,6 +22,7 @@ var gobal_data;
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
+var games_played;
 
 
 gameContainerEl.classList.add('hide');
@@ -52,6 +54,7 @@ function startGame() {
   var num_questions = document.getElementById("trivia_amount").value; //get index selected
   if(player != "" && player)
   {
+    load_save();
     modalEl.classList.add('hide');
     fetch_questions(category,difficulty,num_questions);
   }
@@ -162,8 +165,10 @@ if (currentQuestionIndex < global_data.length-1) {
   nextButton.classList.remove('hide')
   }
 else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    startButton.innerText = 'Restart';
+    startButton.classList.remove('hide');
+    games_played++;
+    save_data();
     }
   }; 
 
@@ -180,6 +185,46 @@ function setStatusClass(element, correct) {
 function clearStatusClass(element) {
   element.classList.remove('correct')
   element.classList.remove('wrong')
+};
+
+var save_data = () => {
+  var saved = JSON.parse(localStorage.getItem("trivia_save")) || [];
+  let player = {
+    name: document.getElementById("player_name").value,
+    correct: correct_answers,
+    played: games_played
+  }
+  var index = check_save(saved);
+  if(index != -1){
+    saved[index].correct = correct_answers;
+    saved[index].played = games_played;
+  }
+  else {
+    saved.push(player);
+  }
+  localStorage.setItem("trivia_save", JSON.stringify(saved));
+};
+
+var check_save = (saved) => {
+  for(var i = 0; i < saved.length; i++)
+  {
+    if(saved[i].name === player)
+    {
+      return i;
+    }
+  }
+  return -1;
+};
+
+function load_save () {
+  var saved = JSON.parse(localStorage.getItem("trivia_save")) || [];
+  for(var i = 0; i < saved.length; i++)
+  {
+    if(check_save(saved) != -1){
+      games_played = saved[i].played;
+      return
+    }
+  }
 };
 
 //DOM Event Listeners
