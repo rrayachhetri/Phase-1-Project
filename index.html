@@ -17,7 +17,7 @@
         <div class="modal-content">
             <h1 id="greeting">Hi Welcome!</h1>
             <div id="player-name-container">
-                <span class="close" >&times;</span>
+                <!-- <span class="close" >&times;</span> -->
                 <label for="player_name">Player Name</label>
                 <input id="player_name" type="text">
             </div>
@@ -77,14 +77,16 @@
                     <h2>Welcome to Trivia Master Deluxe Game <br> <br>Click Start to begin</h2>
                 </div>
                 <div class="card-face card_face-back__Y"> <!--Back Face-->
-                    <div class="card-content"> <!--Back Content-->
-                        <div class="card-header">
-                            <img src="./assets/img/Family.PNG" class="img" alt="">
-                            <h2>Family!</h2>
-                        </div>
-                        <div class="card-body">
-                            <h3>Toretto:</h3>
-                            <p>You might  be strong! But nothing is stronger than family!</p>
+                    <div id="card-content" class="card-content"> <!--Back Content-->
+                        <!-- <div class="card-header"> -->
+                            <!-- <img id=img class="img" alt=""> -->
+                            <!-- <h2>Family!</h2> -->
+                        <!-- </div> -->
+                        <div id="card-body" class="card-body">
+                           <img id="gif" class="gif">
+                           <div id="correct" class="correct"></div>
+                           <div id="incorrect" class="incorrect"></div>
+                            <!-- <p>You might  be strong! But nothing is stronger than family!</p> -->
                         </div>
                     </div>
                 </div>

@@ -7,12 +7,19 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
 const gameContainerEl = document.getElementById("game-container");
+const backContent = document.getElementById("card-body");
+const gifImg = document.getElementById("gif");
+const correctAnswer = document.getElementById("correct"); 
+const incorrectAnswer = document.getElementById("incorrect"); 
+
 gameContainerEl.classList.add('hide');
+
 
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
 var player;
+var correct_answers, incorrect_answers; 
 
 var fetch_questions = (category,difficulty,amount) => {
     var URL = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
@@ -94,15 +101,44 @@ function get_answers (data) {
   return answers;
 };
 
+var fetch_qify = () => {
+  fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+    // Convert the response to JSON
+    .then(function(response) {
+      return response.json();
+    })
+    .then(function(response) {
+      
+      gifImg.setAttribute('src', response.data.image_url);
+      backContent.appendChild(gifImg);
+      
+})};
+
 function selectAnswer(e) {
  
-  const selectedButton = e.target.getAttribute("data-value")
+  const selectedButton = e.target.getAttribute("data-value");
+ 
+if (selectedButton === 'correct'){
+    correct_answers = correct_answers + 1 ; 
+}
+else{ 
+  incorrect_answers = incorrect_answers + 1; 
+}
 
-  if (currentQuestionIndex < global_data.length-1) {
-  currentQuestionIndex++
-  setNextQuestion(global_data);
+if (currentQuestionIndex < global_data.length-1) {
+  fetch_qify();
+  // correctAnswer.appendChild ("Correct : ")
+  // incorrectAnswer.appendChild ("IncorrectAnswer : ")
+  card.toggleClass("is-flipped__Y")
+  nextButton.classList.remove('hide')
   }
-}; 
+else {
+    startButton.innerText = 'Restart'
+    startButton.classList.remove('hide')
+    }
+  
+
+  }; 
 
 
 function setStatusClass(element, correct) {
@@ -121,9 +157,9 @@ function clearStatusClass(element) {
 
 //DOM Event Listeners
 card.click(() => card.toggleClass("is-flipped__Y")); 
-startButton.addEventListener('click', startGame)
+startButton.addEventListener('click', startGame); 
 nextButton.addEventListener('click', () => {
-  currentQuestionIndex++
-  setNextQuestion(global_data);
+  card.toggleClass("is-flipped__Y")
+currentQuestionIndex++
+setNextQuestion(global_data);
 });
-
