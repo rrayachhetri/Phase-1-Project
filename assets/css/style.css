@@ -253,8 +253,20 @@ button:hover {
     background-color: #4DA8DA;
 }
 
+.gif {
+    margin-top:  15px;
+    width: 100%;
+}
 
 
+@media screen and (max-width: 980) {
+    start-btn { 
+        align-items:  left;
+    }
+    .modal-content {
+     width: 100%;
+    }
+    }
 
 /* Media queries  */
 @media screen and (min-width: 1025px) {
@@ -445,5 +457,8 @@ main {
 
 
 
-
-
+@media screen and (max-width: 680px) {
+.modal-content {
+ width: 100%;
+}
+}

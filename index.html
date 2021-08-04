@@ -17,14 +17,14 @@
         <div class="modal-content">
             <h1 id="greeting">Hi Welcome!</h1>
             <div id="player-name-container">
-               
+
                 <label for="player_name">Player Name</label>
                 <input id="player_name" type="text" placeholder="enter your name">
             </div>
             <div id="category-container">
                 <label for="trivia_category">Select Category: </label>
                 <select id="trivia_category" name="trivia_category" class="form-control">
-                    <option value="any">Any Category</option>
+                    <option value="20">Any Category</option>
                     <option value="9">General Knowledge</option>
                     <option value="10">Entertainment: Books</option>
                     <option value="11">Entertainment: Film</option>
@@ -54,7 +54,7 @@
             <div id="difficulty-container">
                 <label for="difficulty">Choose a Difficulty:</label>
                 <select id="difficulty" name="difficulty">
-                <option value="any">Any Difficulty</option>
+                <option value="medium">Any Difficulty</option>
                 <option value="easy">Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
@@ -77,14 +77,21 @@
                     <h2>Welcome to Trivia Master Deluxe Game <br> <br>Click Start to begin</h2>
                 </div>
                 <div class="card-face card_face-back__Y"> <!--Back Face-->
-                    <div class="card-content"> <!--Back Content-->
-                        <div class="card-header">
-                            <img src="./assets/img/Family.PNG" class="img" alt="">
-                            <h2>Family!</h2>
-                        </div>
-                        <div class="card-body">
-                            <h3>Toretto:</h3>
-                            <p>You might  be strong! But nothing is stronger than family!</p>
+                    <div id="card-content" class="card-content"> <!--Back Content-->
+                        <!-- <div class="card-header"> -->
+                            <!-- <img id=img class="img" alt=""> -->
+                            <!-- <h2>Family!</h2> -->
+                        <!-- </div> -->
+                        <div id="card-body" class="card-body">
+                           <img id="gif" class="gif">
+                           <p id="correctAnswers"></p>
+                           <p id="incorrectAnswers"></p>
+                           <p id="total_games_played"></p>
+
+                        
+                        
+                           <button id="next-btn" class="next-btn btn hide">Next</button> -->
+                            <!-- <p>You might  be strong! But nothing is stronger than family!</p> -->
                         </div>
                     </div>
                 </div>
@@ -102,7 +109,7 @@
                 <button value="wrong">D</button>
             </div>
             <div class="control">
-                <button id="next-btn" class="next-btn btn hide">Next</button>
+                
             </div>
 
 
