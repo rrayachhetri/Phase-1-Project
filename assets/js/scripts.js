@@ -10,8 +10,7 @@ const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
 const correctAnswer = document.getElementById("correct"); 
-const incorrectAnswer = document.getElementById("incorrect"); 
-// var nextButton = document.createElement("button"); 
+const incorrectAnswer = document.getElementById("incorrect");  
 const correctAnswers = document.getElementById ("correctAnswers"); 
 const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
 
@@ -184,11 +183,12 @@ function clearStatusClass(element) {
 };
 
 //DOM Event Listeners
-card.click(() => card.toggleClass("is-flipped__Y")); 
+// card.click(() => card.toggleClass("is-flipped__Y")); 
 startButton.addEventListener('click', startGame); 
 nextButton.addEventListener('click', () => {
 console.log ("click"); 
-card.toggleClass("is-flipped__Y")
+debugger;
+card.toggleClass("is-flipped__Y");
 currentQuestionIndex++;
 setNextQuestion(global_data);
 });
