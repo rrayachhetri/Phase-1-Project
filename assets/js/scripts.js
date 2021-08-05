@@ -10,16 +10,27 @@ const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
 const correctAnswer = document.getElementById("correct"); 
-const incorrectAnswer = document.getElementById("incorrect"); 
-
-gameContainerEl.classList.add('hide');
+const incorrectAnswer = document.getElementById("incorrect");  
+const correctAnswers = document.getElementById ("correctAnswers"); 
+const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
+const totalPlayed = document.getElementById ("total_games_played"); 
 
 
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
 var player;
-var correct_answers, incorrect_answers; 
+var correct_answers = 0;
+var incorrect_answers = 0;
+var games_played;
+
+
+gameContainerEl.classList.add('hide');
+// nextButton.id = "next-btn";
+// nextButton.classList = "next-btn btn hide"; 
+// nextButton.textContent = "Next";
+correctAnswers.textContent = "Correct answers : " + correct_answers; 
+incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers; 
 
 var fetch_questions = (category,difficulty,amount) => {
     var URL = `https://opentdb.com/api.php?amount=${amount}&category=${category}&difficulty=${difficulty}&type=multiple`
@@ -43,6 +54,7 @@ function startGame() {
   var num_questions = document.getElementById("trivia_amount").value; //get index selected
   if(player != "" && player)
   {
+    load_save();
     modalEl.classList.add('hide');
     fetch_questions(category,difficulty,num_questions);
   }
@@ -97,47 +109,92 @@ function get_answers (data) {
       type: "incorrect"
     }
   ];
-
+  answers = randomize(answers);
   return answers;
 };
+//Randomize answers
+var randomize = function(array){
+  var new_array = [];
+  var temp_array = array;
+  for(var i = 0; i < array.length; i++)
+  {
+      var index = Math.floor(Math.random()*temp_array.length);
+      new_array.push(temp_array[index]);
+      temp_array = removefromArray(temp_array[index],temp_array);
+  }
+  return new_array;
+};
 
-var fetch_qify = () => {
-  fetch('https://api.giphy.com/v1/gifs/random?api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN')
+//Removes Items from Array
+var removefromArray = function(value,array) {
+  new_array = [];
+  for(var i = 0; i < array.length; i++)
+  {
+      if(array[i] !== value)
+      {
+          new_array.push(array[i]);
+      }
+  }
+  return new_array;
+  };
+
+var fetch_gify = () => {
+  fetch('https://api.giphy.com/v1/gifs/search?q=correct&rating=pg&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1')
     // Convert the response to JSON
     .then(function(response) {
       return response.json();
     })
     .then(function(response) {
-      
-      gifImg.setAttribute('src', response.data.image_url);
+      gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
       backContent.appendChild(gifImg);
-      
-})};
+      backContent.appendChild(correctAnswers);
+      backContent.appendChild(incorrectAnswers);
+      backContent.appendChild(nextButton);
+      })
+    };
+
+  var fetch_gify_sad = () => {
+      fetch('https://api.giphy.com/v1/gifs/search?q=wrong&rating=pg&api_key=HvaacROi9w5oQCDYHSIk42eiDSIXH3FN&limit=1')
+        // Convert the response to JSON
+        .then(function(response) {
+          return response.json();
+        })
+        .then(function(response) {
+          gifImg.setAttribute('src', response.data[0].images.fixed_height.url);
+          backContent.appendChild(gifImg);
+          backContent.appendChild(correctAnswers);
+          backContent.appendChild(incorrectAnswers);
+          backContent.appendChild(nextButton);
+          })
+        };
 
 function selectAnswer(e) {
- 
-  const selectedButton = e.target.getAttribute("data-value");
- 
-if (selectedButton === 'correct'){
-    correct_answers = correct_answers + 1 ; 
+  const selectedButton = e.target.getAttribute("data-value"); 
+if (selectedButton === 'correct'){   
+  correct_answers = correct_answers + 1; 
+  correctAnswers.textContent = "Correct answers : " + correct_answers; 
+  incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers;  
+  fetch_gify(); 
 }
+
 else{ 
   incorrect_answers = incorrect_answers + 1; 
+  correctAnswers.textContent = "Correct answers : " + correct_answers; 
+  incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers; 
+  fetch_gify_sad(); 
 }
 
 if (currentQuestionIndex < global_data.length-1) {
-  fetch_qify();
-  // correctAnswer.appendChild ("Correct : ")
-  // incorrectAnswer.appendChild ("IncorrectAnswer : ")
+  resetState(); 
   card.toggleClass("is-flipped__Y")
   nextButton.classList.remove('hide')
   }
 else {
-    startButton.innerText = 'Restart'
-    startButton.classList.remove('hide')
+    startButton.innerText = 'Restart';
+    startButton.classList.remove('hide');
+    games_played++;
+    save_data();
     }
-  
-
   }; 
 
 
@@ -155,11 +212,53 @@ function clearStatusClass(element) {
   element.classList.remove('wrong')
 };
 
+var save_data = () => {
+  var saved = JSON.parse(localStorage.getItem("trivia_save")) || [];
+  let player = {
+    name: document.getElementById("player_name").value,
+    correct: correct_answers,
+    played: games_played
+  }
+  var index = check_save(saved);
+  if(index != -1){
+    saved[index].correct = correct_answers;
+    saved[index].played = games_played;
+  }
+  else {
+    saved.push(player);
+  }
+  localStorage.setItem("trivia_save", JSON.stringify(saved));
+};
+
+var check_save = (saved) => {
+  for(var i = 0; i < saved.length; i++)
+  {
+    if(saved[i].name === player)
+    {
+      return i;
+    }
+  }
+  return -1;
+};
+
+function load_save () {
+  var saved = JSON.parse(localStorage.getItem("trivia_save")) || [];
+  for(var i = 0; i < saved.length; i++)
+  {
+    if(check_save(saved) != -1){
+      games_played = saved[i].played;
+      return
+    }
+  }
+};
+
 //DOM Event Listeners
-card.click(() => card.toggleClass("is-flipped__Y")); 
+// card.click(() => card.toggleClass("is-flipped__Y")); 
 startButton.addEventListener('click', startGame); 
-nextButton.addEventListener('click', () => {
-  card.toggleClass("is-flipped__Y")
-currentQuestionIndex++
+nextButton.addEventListener('click', () => { 
+card.toggleClass("is-flipped__Y");
+currentQuestionIndex++;
 setNextQuestion(global_data);
 });
+
+
