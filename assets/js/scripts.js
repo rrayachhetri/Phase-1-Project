@@ -26,7 +26,7 @@ var amount;
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
-var games_played;
+var games_played = 0;
 
 
 gameContainerEl.classList.add('hide');
@@ -163,7 +163,7 @@ var fetch_gify = () => {
       backContent.appendChild(incorrectAnswers);
       backContent.appendChild(nextButton); 
       if (currentQuestionIndex == amount -1 ){
-        nextButton.innerHTML = "result";
+        nextButton.innerHTML = "Result";
       };
      
       })
@@ -182,7 +182,7 @@ var fetch_gify = () => {
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
           if (currentQuestionIndex == amount -1 ){
-            nextButton.innerHTML = "result";
+            nextButton.innerHTML = "Result";
           };
          
           })
@@ -262,7 +262,8 @@ function load_save () {
   for(var i = 0; i < saved.length; i++)
   {
     if(check_save(saved) != -1){
-      games_played = saved[i].played;
+      console.log(check_save(saved));
+      games_played = saved[check_save(saved)].played;
       return
     }
   }
