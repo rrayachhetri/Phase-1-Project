@@ -14,15 +14,19 @@ const incorrectAnswer = document.getElementById("incorrect");
 const correctAnswers = document.getElementById ("correctAnswers"); 
 const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
 const totalPlayed = document.getElementById ("total_games_played"); 
+const resultmodal = document.getElementById ("result-modal"); 
+const resetbtn = document.getElementById ("Reset");
 
 
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
+var amount; 
+//  = document.getElementById("trivia_amount").value; 
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
-var games_played;
+var games_played = 0;
 
 
 gameContainerEl.classList.add('hide');
@@ -51,7 +55,8 @@ function startGame() {
   player = document.getElementById("player_name").value; //get player name
   var category = document.getElementById("trivia_category").value; //get index selected
   var difficulty = document.getElementById("difficulty").value; //get index selected
-  var num_questions = document.getElementById("trivia_amount").value; //get index selected
+  var num_questions = document.getElementById("trivia_amount").value;
+  amount = num_questions;  //get index selected
   if(player != "" && player)
   {
     load_save();
@@ -69,6 +74,7 @@ function setNextQuestion(data) {
 };
 
 function showQuestion(data) {
+  if (currentQuestionIndex < data.length ) {
   questionElement.innerText = data[currentQuestionIndex].question;
     answer_array = get_answers(data);
     for(var i = 0; i < answer_array.length; i++)
@@ -80,6 +86,12 @@ function showQuestion(data) {
       button.addEventListener('click', selectAnswer);
       answerButtonsElement.appendChild(button);
     };
+  }
+  else {
+    resultmodal.classList.remove('hide');    
+    games_played++;
+    save_data();
+  }
 };
 
 function resetState() {
@@ -149,7 +161,11 @@ var fetch_gify = () => {
       backContent.appendChild(gifImg);
       backContent.appendChild(correctAnswers);
       backContent.appendChild(incorrectAnswers);
-      backContent.appendChild(nextButton);
+      backContent.appendChild(nextButton); 
+      if (currentQuestionIndex == amount -1 ){
+        nextButton.innerHTML = "Result";
+      };
+     
       })
     };
 
@@ -165,7 +181,12 @@ var fetch_gify = () => {
           backContent.appendChild(correctAnswers);
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
+          if (currentQuestionIndex == amount -1 ){
+            nextButton.innerHTML = "Result";
+          };
+         
           })
+        
         };
 
 function selectAnswer(e) {
@@ -184,17 +205,12 @@ else{
   fetch_gify_sad(); 
 }
 
-if (currentQuestionIndex < global_data.length-1) {
+ 
   resetState(); 
   card.toggleClass("is-flipped__Y")
   nextButton.classList.remove('hide')
-  }
-else {
-    startButton.innerText = 'Restart';
-    startButton.classList.remove('hide');
-    games_played++;
-    save_data();
-    }
+
+ 
   }; 
 
 
@@ -246,7 +262,8 @@ function load_save () {
   for(var i = 0; i < saved.length; i++)
   {
     if(check_save(saved) != -1){
-      games_played = saved[i].played;
+      console.log(check_save(saved));
+      games_played = saved[check_save(saved)].played;
       return
     }
   }
@@ -257,8 +274,10 @@ function load_save () {
 startButton.addEventListener('click', startGame); 
 nextButton.addEventListener('click', () => { 
 card.toggleClass("is-flipped__Y");
-currentQuestionIndex++;
+currentQuestionIndex++; 
 setNextQuestion(global_data);
 });
 
-
+resetbtn.addEventListener('click', function(){
+  window.location.reload();
+});
