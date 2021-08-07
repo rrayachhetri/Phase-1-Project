@@ -14,6 +14,8 @@ const incorrectAnswer = document.getElementById("incorrect");
 const correctAnswers = document.getElementById ("correctAnswers"); 
 const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
 const totalPlayed = document.getElementById ("total_games_played"); 
+const resultmodal = document.getElementById ("result-modal"); 
+const resetbtn = document.getElementById ("Reset");
 
 
 //Global Variable
@@ -190,7 +192,9 @@ if (currentQuestionIndex < global_data.length-1) {
   nextButton.classList.remove('hide')
   }
 else {
-    startButton.innerText = 'Restart';
+    resultmodal.classList.remove('hide');
+    resetbtn.innerText = 'Restart';
+    resetbtn = startButton; 
     startButton.classList.remove('hide');
     games_played++;
     save_data();
