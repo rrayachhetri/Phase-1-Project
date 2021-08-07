@@ -26,6 +26,24 @@ var games_played;
 
 
 gameContainerEl.classList.add('hide');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // nextButton.id = "next-btn";
 // nextButton.classList = "next-btn btn hide"; 
 // nextButton.textContent = "Next";
