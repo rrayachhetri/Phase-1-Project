@@ -304,21 +304,7 @@ button {
     background-color: #004E7C;
     width: 500%;
 }
- #Qresult {
-     position: relative;
-     top:200px;
-     left: 600px;
-     background-image: url("assets\img\Logo.png");
 
- }
-
- #logo2 {
-     position:relative;
-     top: 150px;
-     left: 40%;
-     
-
- }
 
 #answer-buttons {
     position: relative;
@@ -545,24 +531,7 @@ body {
     object-fit: cover;
 }
 
-#logo2 {
-     position:relative;
-     top: 70px;
-     left: 25%;
-     
- }
 
-#Qresult {
-     position: relative;
-     top:100px;
-     left: 60px;
-     background-image: url("assets\img\Logo.png");
-
- }
- #Viewscores, #player_named {
-      width: 100%;
-      margin-right:200px;
-    }
 
 }
 
@@ -581,20 +550,7 @@ body {
     left: 50px;
     top: 40px;
 }
-#Qresult {
-     position: relative;
-     top:100px;
-     left: 60px;
-     background-image: url("assets\img\Logo.png");
 
- }
-
- #logo2 {
-     position:relative;
-     top: 70px;
-     left: 25%;
-     
- }
   #Viewscores, #player_named {
       width: 100%;
       margin-right:200px;
