@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -339,18 +340,19 @@ button:hover {
 }
 
 footer {
+    margin: 0 ;
+    position: static;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fefefe;
     padding: 25px 35px ; 
     display: flex;
     justify-content: center;
     justify-content: space-between;
-    position: fixed;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;  
    text-align: center;
+   position: fixed;
 }
 
 footer img {
