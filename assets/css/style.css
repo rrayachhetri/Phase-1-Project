@@ -449,10 +449,6 @@ body {
       left:150px;
    
     }
-/* 
-   #response-container {
-    margin-right: 10px;
-    border: 3px solid red; */
 
     button {
     color:white;
@@ -569,6 +565,8 @@ body {
     }
 
 }
+
+
 /* iphone 6/7/8 plus */
    @media screen and (max-width: 414px) {
 
