@@ -252,8 +252,33 @@ var save_data = () => {
   else {
     saved.push(player);
   }
+  saved = organize(saved);
   localStorage.setItem("trivia_save", JSON.stringify(saved));
 };
+
+var organize = function(items) {
+  var place_holder;
+
+  for(outer_loop = 0; outer_loop < items.length; outer_loop++)
+  {
+      for(inner_loop = outer_loop+1; inner_loop < items.length; inner_loop++)
+      {
+          if(items[inner_loop].correct > items[outer_loop].correct)
+          {
+              //change positions
+            place_holder = items[outer_loop];
+            items[outer_loop] = items[inner_loop];
+            items[inner_loop] = place_holder;
+            place_holder = "";
+          }
+      }
+  }
+  if(items.length > 30)
+  {
+     items =  items.slice(0,29);
+  }
+  return items;
+}
 
 var check_save = (saved) => {
   for(var i = 0; i < saved.length; i++)
@@ -295,9 +320,7 @@ resetbtn.addEventListener('click', function(){
 // goBackBtn.addEventListener('click' () => {
 
 // })
-function goBack() {
-  window.history.back();
-}
+
 // viewScorebtn.addEventListener('click', function (){
 //   localStorage.getItem (saved)
 // });

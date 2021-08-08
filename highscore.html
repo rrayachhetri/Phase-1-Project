@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/highscore.css">
     <title>Trivia Master Deluxe Game</title>
 </head>
 <body>
@@ -17,17 +18,15 @@
     </nav>
     <div id="Qresult">
         <!-- <span class="close" >&times;</span> -->
-        <label for="player_named">Player Name</label> </br>
-        <input id="player_named" type="text" placeholder="Enter your name"> </br>
-        <label for="Viewscores"> High Scores!</label>
-        <input id="Viewscores" type="text" >
-        <button onclick='goBack()' " id="goBack">Go Back</button>
+        <h1>Highscores!</h1>
+        <ul id="list"></ul>
+        <button onclick='goBack()' " id="goBack">Homepage</button>
     </div>
        
     </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="./assets/js/scripts.js"></script>
+<script src="./assets/js/highscore.js"></script>
 </body>
 </html>
