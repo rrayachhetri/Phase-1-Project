@@ -27,7 +27,7 @@
                 <div id="player-name-container">
                     <!-- <span class="close" >&times;</span> -->
                     <label for="player_name">Player Name</label>
-                    <input id="player_name" type="text" placeholder="Enter your name"> 
+                    <input id="player_name" type="text" placeholder="Enter your name">
                 </div>
                 <div id="category-container">
                     <label for="trivia_category">Select Category: </label>
@@ -77,39 +77,41 @@
             </div>
         </div>
         <!-- End of Modal -->
-       
+
         <div id="game-container" class="pure-g">
-                <!-- Card Content -->
-                <div id="question-container" class="card_container">
-                    <!--Card container Will handle perspective-->
-                    <div class="inner">
-                        <!--Will do flipping-->
-                        <div id="question" class="card-face card_face-front">
-                            <!--Front Face-->
-                            <h2>Welcome to Trivia Master Deluxe Game <br> <br>Click Start to begin</h2>
-                        </div>
-                        <div class="card-face card_face-back__Y">
-                            <!--Back Face-->
-                            <div id="card-content" class="card-content">
-                                <!--Back Content-->
-                                <!-- <div class="card-header"> -->
-                                <!-- <img id=img class="img" alt=""> -->
-                                <!-- <h2>Family!</h2> -->
-                                <!-- </div> -->
-                                <div id="card-body" class="card-body">
-                                    <img id="gif" class="gif">
-                                    <p id="correctAnswers"></p>
-                                    <p id="incorrectAnswers"></p>
-                                    <p id="total_games_played"></p>
-                                    <button id="next-btn" class="next-btn btn hide">Next</button> -->
-                                    <!-- <p>You might  be strong! But nothing is stronger than family!</p> -->
-                                </div>
+
+            <!-- Card Content -->
+            <div id="question-container" class="card_container">
+                <!--Card container Will handle perspective-->
+                <div class="inner">
+                    <!--Will do flipping-->
+                    <div id="question" class="card-face card_face-front">
+                        <!--Front Face-->
+                        <h2>Welcome to Trivia Master Deluxe Game <br> <br>Click Start to begin</h2>
+                    </div>
+                    <div class="card-face card_face-back__Y">
+                        <!--Back Face-->
+                        <div id="card-content" class="card-content">
+                            <!--Back Content-->
+                            <!-- <div class="card-header"> -->
+                            <!-- <img id=img class="img" alt=""> -->
+                            <!-- <h2>Family!</h2> -->
+                            <!-- </div> -->
+                            <div id="card-body" class="card-body">
+                                <img id="gif" class="gif">
+                                <p id="correctAnswers"></p>
+                                <p id="incorrectAnswers"></p>
+                                <p id="total_games_played"></p>
+                                <button id="next-btn" class="next-btn btn hide">Next</button> -->
+                                <!-- <p>You might  be strong! But nothing is stronger than family!</p> -->
                             </div>
                         </div>
                     </div>
-        
+                </div>
+
                 <!-- End Card Content -->
             </div>
+        </div>
             <div id="response-container" class="pure-u-xl-1-5 pure-u-xl-1-5 pure-u-lg-1-2">
                 <!-- Response Content -->
                 <!-- Buttons with possible answer....should be created dynamically depending on amount of answers -->
@@ -120,47 +122,44 @@
                     <button value="wrong">D</button>
                 </div>
             </div>
-            <footer>
-                <div id="wrapper">
-                    <div class="footer-content">
-                        <img src="./assets/img/Logo.png" alt="" srcset="">
-                        <p>The purpose of the project is to illustrate <br> the use of HTML, CSS, JavaScript, <br> API, modals.
-                            it is foucsed as moblie application </p>
-                    </div>
-                    <div class="footer-content">
-                        <h2>Links</h2>
-                        <p>Github</p>
-                        <p>website</p>
-                        <p>yout email</p>
-                    </div>
-                    <div class="footer-content">
-                        <h2>follow us</h2>
-                        <p>instagram</p>
-                        <p>linkedin</p>
-                        <p>twitter</p>
-                    </div>
-                </div>
-            </footer>
+
             <div class="result-modal hide" id="result-modal">
                 <div class="resutl-modal-content" id="resutl-modal-content">
-                    
+
                     <h1> Congratulations!</br> <span id="font">You've completed the Quiz </span></h1>
                     <p> Click below to "Restart" or "View Scores!"</p>
                     <!-- <p> Click below to "Restart" or "View Scores!"</p> -->
                     <button id="Reset">Restart</button>
-                    <button  onclick="location.href='./highscore.html' " id="Viewscore">View Scores!</button> 
-    
+                    <button onclick="location.href='./highscore.html' " id="Viewscore">View Scores!</button>
+
                 </div>
             </div>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
-            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
-            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="./assets/js/scripts.js"></script>
-        </body>
-        </div>
-        <!-- End Button Content -->
-
-     
-
     </main>
+    <footer>
+        <div id="wrapper">
+            <div class="footer-content">
+                <img src="./assets/img/Logo.png" alt="" srcset="">
+                <p>The purpose of the project is to illustrate <br> the use of HTML, CSS, JavaScript, <br> API, modals.
+                    it is foucsed as moblie application </p>
+            </div>
+            <div class="footer-content">
+                <h2>Links</h2>
+                <p>Github</p>
+                <p>website</p>
+                <p>yout email</p>
+            </div>
+            <div class="footer-content">
+                <h2>follow us</h2>
+                <p>instagram</p>
+                <p>linkedin</p>
+                <p>twitter</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/scripts.js"></script>
+</body>
+
 </html>

@@ -149,8 +149,10 @@ height: 10%;
 /*End Modal*/
 
 main {
-    padding-top: 10vh;
-    padding-left: 25vw;
+    margin: 25px 25px;
+    /* padding-top: 10vh;
+    padding-left: 25vw; */
+    display: flex;
 }
 
 .card_container {
@@ -344,7 +346,7 @@ footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: block;
     background-color: #fefefe;
-    padding: 25px 35px ; 
+    padding: 15px 15px ; 
     left: 0;
     top:100%;
     width: 100%; 
