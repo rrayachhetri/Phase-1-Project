@@ -344,13 +344,14 @@ footer {
     position: static;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #fefefe;
-    padding: 25px 35px ; 
+    padding: 25px 30px ; 
     display: flex;
     justify-content: center;
     justify-content: space-between;
     left: 0;
     bottom: 0;
-    width: 100%;  
+    width: 100%; 
+    height: 5%; 
    text-align: center;
    position: fixed;
 }
@@ -690,6 +691,25 @@ main {
 
 #resutl-modal-content {
     font-size: 15px;
+}
+
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefefe;
+    padding: 25px 35px ; 
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;  
+   text-align: center;
+}
+
+.footer-content {
+    position: relative;
+    top: 5px;
 }
 
 @media screen and (max-width: 680px) {
