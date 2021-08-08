@@ -6,9 +6,6 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
-// resultmodal 
-//const endModalEl  = document.getElementById("endModal");
-//
 const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
@@ -32,16 +29,6 @@ var games_played = 0;
 
 
 gameContainerEl.classList.add('hide');
-
-
-// function viewScore (){
-
-// }
-
-
-// nextButton.id = "next-btn";
-// nextButton.classList = "next-btn btn hide"; 
-// nextButton.textContent = "Next";
 correctAnswers.textContent = "Correct answers : " + correct_answers; 
 incorrectAnswers.textContent = "Incorrect answers : " + incorrect_answers; 
 
@@ -314,13 +301,3 @@ setNextQuestion(global_data);
 resetbtn.addEventListener('click', function(){
   window.location.reload();
 });
-
-// goBack 
-// const goBackBtn = document.getElementById('goBack');
-// goBackBtn.addEventListener('click' () => {
-
-// })
-
-// viewScorebtn.addEventListener('click', function (){
-//   localStorage.getItem (saved)
-// });
