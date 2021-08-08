@@ -3,12 +3,12 @@
 This project was designed to illustrate the use of HTML, CSS, JavaScript, API, modals. It will get the information from the user within a model,will fetch to receive and provide questions and collect user input to determine whether the answers to a question are correct,this then generates a score and appends to a final page of results as a modal. 
 
 
-[!link] {gif image}
+![image of website](./assets/img/secreenshot.JPG)
 
 
 ## Github Repo and Website link 
- [!https://github.com/darkjuanjo/Phase-1-Project](https://github.com/darkjuanjo/Phase-1-Project)
- - 
+ [https://github.com/darkjuanjo/Phase-1-Project](https://github.com/darkjuanjo/Phase-1-Project)
+
 ## features 
 - Two Modals
 - Two APIs
@@ -23,12 +23,13 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 ### API
 - Trivia 
     - [https://opentdb.com/api_config.php](https://opentdb.com/api_config.php)
-- Wiki 
- - [wiki]("wiki ")
+- Giphy 
+    - [https://api.giphy.com](https://api.giphy.com)
+
 ### CSS 
-- https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css
-- 
-- 
+- Responsive for iphones version 
+    - https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css
+
 ### font
 - https://fonts.googleapis.com/css?family=Montserrat
 
