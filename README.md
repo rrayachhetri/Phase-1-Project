@@ -7,10 +7,10 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 
 ## Github Repo and Website link 
- [https://github.com/darkjuanjo/Phase-1-Project](https://github.com/darkjuanjo/Phase-1-Project)
+ [https://github.com/rrayachhetri/Phase-1-Project] (https://github.com/rrayachhetri/Phase-1-Project)
  
- [!link](your link)
-
+ [https://rrayachhetri.github.io/Phase-1-Project/](https://rrayachhetri.github.io/Phase-1-Project/)
+k)
 ## features 
 - Two Modals
 - Two APIs
