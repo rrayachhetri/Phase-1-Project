@@ -163,7 +163,7 @@ var fetch_gify = () => {
       backContent.appendChild(incorrectAnswers);
       backContent.appendChild(nextButton); 
       if (currentQuestionIndex == amount -1 ){
-        nextButton.innerHTML = "Result";
+        nextButton.innerHTML = "Continue";
       };
      
       })
