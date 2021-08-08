@@ -421,9 +421,7 @@ footer img {
 
 /*ipad pro*/
 @media screen and (max-width: 1024px) {
-body {
-    background:url("./assets/img/logo.png")
-}
+
    label {
     font-weight: bold;
     font-size: 1rem;
