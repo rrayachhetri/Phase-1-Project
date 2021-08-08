@@ -6,6 +6,9 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
+// resultmodal rabin
+const endModalEl  = document.getElementById("endModal");
+//
 const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
@@ -14,11 +17,16 @@ const incorrectAnswer = document.getElementById("incorrect");
 const correctAnswers = document.getElementById ("correctAnswers"); 
 const incorrectAnswers = document.getElementById ("incorrectAnswers"); 
 const totalPlayed = document.getElementById ("total_games_played"); 
-
+const resultmodal = document.getElementById ("result-modal"); 
+const resetbtn = document.getElementById ("Reset");
+// view Score!
+const viewScorebtn = document.getElementById("Viewscore");
 
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
+var amount; 
+//  = document.getElementById("trivia_amount").value; 
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
@@ -28,7 +36,9 @@ var games_played;
 gameContainerEl.classList.add('hide');
 
 
+function viewScore (){
 
+}
 
 
 
@@ -69,7 +79,8 @@ function startGame() {
   player = document.getElementById("player_name").value; //get player name
   var category = document.getElementById("trivia_category").value; //get index selected
   var difficulty = document.getElementById("difficulty").value; //get index selected
-  var num_questions = document.getElementById("trivia_amount").value; //get index selected
+  var num_questions = document.getElementById("trivia_amount").value;
+  amount = num_questions;  //get index selected
   if(player != "" && player)
   {
     load_save();
@@ -87,6 +98,7 @@ function setNextQuestion(data) {
 };
 
 function showQuestion(data) {
+  if (currentQuestionIndex < data.length ) {
   questionElement.innerText = data[currentQuestionIndex].question;
     answer_array = get_answers(data);
     for(var i = 0; i < answer_array.length; i++)
@@ -98,6 +110,12 @@ function showQuestion(data) {
       button.addEventListener('click', selectAnswer);
       answerButtonsElement.appendChild(button);
     };
+  }
+  else {
+    resultmodal.classList.remove('hide');    
+    games_played++;
+    save_data();
+  }
 };
 
 function resetState() {
@@ -167,7 +185,11 @@ var fetch_gify = () => {
       backContent.appendChild(gifImg);
       backContent.appendChild(correctAnswers);
       backContent.appendChild(incorrectAnswers);
-      backContent.appendChild(nextButton);
+      backContent.appendChild(nextButton); 
+      if (currentQuestionIndex == amount -1 ){
+        nextButton.innerHTML = "result";
+      };
+     
       })
     };
 
@@ -183,7 +205,12 @@ var fetch_gify = () => {
           backContent.appendChild(correctAnswers);
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
+          if (currentQuestionIndex == amount -1 ){
+            nextButton.innerHTML = "result";
+          };
+         
           })
+        
         };
 
 function selectAnswer(e) {
@@ -202,17 +229,12 @@ else{
   fetch_gify_sad(); 
 }
 
-if (currentQuestionIndex < global_data.length-1) {
+ 
   resetState(); 
   card.toggleClass("is-flipped__Y")
   nextButton.classList.remove('hide')
-  }
-else {
-    startButton.innerText = 'Restart';
-    startButton.classList.remove('hide');
-    games_played++;
-    save_data();
-    }
+
+ 
   }; 
 
 
@@ -275,8 +297,14 @@ function load_save () {
 startButton.addEventListener('click', startGame); 
 nextButton.addEventListener('click', () => { 
 card.toggleClass("is-flipped__Y");
-currentQuestionIndex++;
+currentQuestionIndex++; 
 setNextQuestion(global_data);
 });
 
+resetbtn.addEventListener('click', function(){
+  window.location.reload();
+});
 
+viewScorebtn.addEventListener('click', function (){
+  localStorage.getItem (saved)
+});
