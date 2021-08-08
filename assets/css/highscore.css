@@ -8,9 +8,17 @@
      margin-right:200px;
    }
 
-   #logo2 {
-    position:relative;
-    top: 70px;
-    left: 25%;
-    
+#logo2 {
+position:relative;
+top: 70px;
+left: 25%;   
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 5px;
 }
