@@ -45,7 +45,7 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 ## Authors 
 - Juan Jose Paz 
-- Rabib Raya Chhetri 
+- Rabin Raya Chhetri 
 - Jordana Bravo
 - Mohammad Javid Moradi 
 

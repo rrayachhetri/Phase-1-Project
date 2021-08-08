@@ -24,6 +24,9 @@ body {
     min-height: 100vh;
 }
 
+#response-container {
+    margin-right: 10px;
+}
 /* Modal */
 .modal {
     display:inline-block;
@@ -36,7 +39,7 @@ body {
     overflow: hidden;
     background-color: rgb(0,0,0);
     background-color: rgba(0,0,0,0.4);
-   
+    
 }
 
 .result-modal {
@@ -59,6 +62,7 @@ body {
     width: 50%;
     height: 50%;
     text-align: center;
+    background-image: url("../img/background.png");
 }
 
 .resutl-modal-content  { 
@@ -215,6 +219,7 @@ main {
 }
 
 .img {
+
     display:block;
     width: 128px;
     height: 128px;
@@ -271,6 +276,27 @@ button {
     background-color: #004E7C;
 }
 
+#goBack {
+
+    color:white;
+    background-color: #004E7C;
+    width: 500%;
+}
+ #Qresult {
+     position: relative;
+     top:200px;
+     left: 600px;
+     background-image: url("assets\img\Logo.png");
+
+ }
+
+ #logo2 {
+     position:relative;
+     top: 150px;
+     left: 40%;
+     
+
+ }
 
 #answer-buttons {
     position: relative;
@@ -298,6 +324,8 @@ button:hover {
     position: relative;
     bottom:4px;
 }
+
+ 
 @media screen and (max-width: 980) {
     start-btn { 
         align-items:  left;
@@ -363,7 +391,7 @@ button:hover {
 
 }
 
-/*tab */
+/*ipad pro*/
 @media screen and (max-width: 1024px) {
 body {
     background:url("./assets/img/logo.png")
@@ -375,10 +403,36 @@ body {
 
    #logo {
       position: relative;
-      bottom:42px;
+      top:62px;
       left:150px;
    
-  }
+    }
+/* 
+   #response-container {
+    margin-right: 10px;
+    border: 3px solid red; */
+}
+    button {
+    color:white;
+    font-weight: 600;
+    margin: 10px 0 0 10px;
+    width: 100%;
+    max-width: 20em;
+    min-width: 20em;
+    padding: 1rem 0;
+    border: none;
+    border-radius: 15px;
+    /* background-image: linear-gradient(to left, blue,purple); */
+    background-color: #004E7C;
+}
+
+#answer-buttons {
+     position: relative;
+     top: 0px;
+     right: 30px;
+     top:30px;
+   }
+ 
    #start-btn   {
     margin:0;
     margin-top: 37px;
@@ -413,7 +467,7 @@ body {
     #question-container {
        position: relative;
        bottom:27px;
-       left: 40px;
+       left: 15px;
               
    
 }
@@ -437,11 +491,43 @@ body {
   
 } 
 .gif {
-    margin-bottom:  px;
-    width: 100%;
+    
+    width: 90%;
+    height: 80%;
 }
+.img {
+    
+    display:block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    object-fit: cover;
 }
-/* iphone */
+
+#logo2 {
+     position:relative;
+     top: 70px;
+     left: 25%;
+     
+ }
+
+#Qresult {
+     position: relative;
+     top:100px;
+     left: 60px;
+     background-image: url("assets\img\Logo.png");
+
+ }
+ #Viewscores, #player_named {
+      width: 100%;
+      margin-right:200px;
+    }
+
+}
+/* iphone 6/7/8 plus */
    @media screen and (max-width: 414px) {
 
 
@@ -453,25 +539,51 @@ body {
 #logo {
     position: relative;
     left: 50px;
-    bottom: 20px;
+    top: 40px;
 }
+#Qresult {
+     position: relative;
+     top:100px;
+     left: 60px;
+     background-image: url("assets\img\Logo.png");
+
+ }
+
+ #logo2 {
+     position:relative;
+     top: 70px;
+     left: 25%;
+     
+ }
+  #Viewscores, #player_named {
+      width: 100%;
+      margin-right:200px;
+    }
+  
   #category-container {
       margin-top: 10px;
-      
-  }
+      }
+
 #greeting {
     margin-top:10px;
     font-size: 19px;
 }
 
    button {
-     width: auto;
-     
+     width: 30%;
+      min-width: 6 rem;
+   }
+ 
+   #next-btn {
+       position: relative;
+       left: 65px;
+       top: 5px;
+       min-width:110px;
    }
    #start-btn   {
     margin:0;
     margin-top: 25px;
-    min-width: 10rem;
+    min-width: rem;
     
    }
   
@@ -521,13 +633,24 @@ body {
     
 } 
 
+   .img {
     
+    display:block;
+    width: 128px;
+    height: 128px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    background-color: white;
+    border: 5px solid white;
+    object-fit: cover;
+}
+ 
 
 main {
     padding-top: 10vh;
     padding-left:10vw;
 }
-   }
+   
 
 #resutl-modal-content {
     font-size: 15px;

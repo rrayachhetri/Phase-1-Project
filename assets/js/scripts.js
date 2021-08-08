@@ -6,7 +6,7 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
-// resultmodal rabin
+// resultmodal 
 //const endModalEl  = document.getElementById("endModal");
 //
 const gameContainerEl = document.getElementById("game-container");
@@ -174,7 +174,7 @@ var fetch_gify = () => {
       backContent.appendChild(incorrectAnswers);
       backContent.appendChild(nextButton); 
       if (currentQuestionIndex == amount -1 ){
-        nextButton.innerHTML = "result";
+        nextButton.innerHTML = "Finish";
       };
      
       })
@@ -193,7 +193,7 @@ var fetch_gify = () => {
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
           if (currentQuestionIndex == amount -1 ){
-            nextButton.innerHTML = "result";
+            nextButton.innerHTML = "Finish";
           };
          
           })
@@ -292,6 +292,14 @@ resetbtn.addEventListener('click', function(){
   window.location.reload();
 });
 
+// goBack 
+// const goBackBtn = document.getElementById('goBack');
+// goBackBtn.addEventListener('click' () => {
+
+// })
+function goBack() {
+  window.history.back();
+}
 // viewScorebtn.addEventListener('click', function (){
 //   localStorage.getItem (saved)
 // });
