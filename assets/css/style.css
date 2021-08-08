@@ -278,6 +278,19 @@ button:hover {
     width: 100%;
 }
 
+footer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #fefefe;
+    padding: 25px 35px ; 
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+}
+
+footer img {
+    width: 40%;
+}
+
 
 @media screen and (max-width: 980) {
     start-btn { 
@@ -388,6 +401,7 @@ button:hover {
     height: 1.2rem;
 }
 
+
 }
 
 /* iphone */
@@ -482,3 +496,4 @@ main {
  width: 100%;
 }
 }
+
