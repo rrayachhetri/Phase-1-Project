@@ -8,6 +8,8 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 ## Github Repo and Website link 
  [https://github.com/darkjuanjo/Phase-1-Project](https://github.com/darkjuanjo/Phase-1-Project)
+ 
+ [!link](your link)
 
 ## features 
 - Two Modals
