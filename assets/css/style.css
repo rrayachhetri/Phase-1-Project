@@ -150,8 +150,8 @@ height: 10%;
 
 main {
     margin: 25px 25px;
-    /* padding-top: 10vh;
-    padding-left: 25vw; */
+    padding-top: 10vh;
+    padding-left: 25vw;
     display: flex;
 }
 
