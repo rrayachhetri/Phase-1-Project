@@ -6,6 +6,9 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
+// resultmodal 
+//const endModalEl  = document.getElementById("endModal");
+//
 const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
@@ -16,7 +19,12 @@ const incorrectAnswers = document.getElementById ("incorrectAnswers");
 const totalPlayed = document.getElementById ("total_games_played"); 
 const resultmodal = document.getElementById ("result-modal"); 
 const resetbtn = document.getElementById ("Reset");
+<<<<<<< HEAD
 
+=======
+// view Score!
+//const viewScorebtn = document.getElementById("Viewscore");
+>>>>>>> feature/result
 
 //Global Variable
 let currentQuestionIndex = 0;
@@ -30,6 +38,13 @@ var games_played;
 
 
 gameContainerEl.classList.add('hide');
+
+
+// function viewScore (){
+
+// }
+
+
 // nextButton.id = "next-btn";
 // nextButton.classList = "next-btn btn hide"; 
 // nextButton.textContent = "Next";
@@ -163,7 +178,7 @@ var fetch_gify = () => {
       backContent.appendChild(incorrectAnswers);
       backContent.appendChild(nextButton); 
       if (currentQuestionIndex == amount -1 ){
-        nextButton.innerHTML = "result";
+        nextButton.innerHTML = "Finish";
       };
      
       })
@@ -182,7 +197,7 @@ var fetch_gify = () => {
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
           if (currentQuestionIndex == amount -1 ){
-            nextButton.innerHTML = "result";
+            nextButton.innerHTML = "Finish";
           };
          
           })
@@ -280,3 +295,15 @@ setNextQuestion(global_data);
 resetbtn.addEventListener('click', function(){
   window.location.reload();
 });
+
+// goBack 
+// const goBackBtn = document.getElementById('goBack');
+// goBackBtn.addEventListener('click' () => {
+
+// })
+function goBack() {
+  window.history.back();
+}
+// viewScorebtn.addEventListener('click', function (){
+//   localStorage.getItem (saved)
+// });
