@@ -6,6 +6,9 @@ const questionContainerElement = document.getElementById('question-container');
 const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
+// resultmodal 
+//const endModalEl  = document.getElementById("endModal");
+//
 const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
 const gifImg = document.getElementById("gif");
@@ -17,12 +20,11 @@ const totalPlayed = document.getElementById ("total_games_played");
 const resultmodal = document.getElementById ("result-modal"); 
 const resetbtn = document.getElementById ("Reset");
 
-
 //Global Variable
 let currentQuestionIndex = 0;
 var gobal_data;
 var amount; 
-//  = document.getElementById("trivia_amount").value; 
+
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
@@ -30,6 +32,13 @@ var games_played = 0;
 
 
 gameContainerEl.classList.add('hide');
+
+
+// function viewScore (){
+
+// }
+
+
 // nextButton.id = "next-btn";
 // nextButton.classList = "next-btn btn hide"; 
 // nextButton.textContent = "Next";
@@ -163,7 +172,7 @@ var fetch_gify = () => {
       backContent.appendChild(incorrectAnswers);
       backContent.appendChild(nextButton); 
       if (currentQuestionIndex == amount -1 ){
-        nextButton.innerHTML = "Result";
+        nextButton.innerHTML = "Finish";
       };
      
       })
@@ -182,7 +191,7 @@ var fetch_gify = () => {
           backContent.appendChild(incorrectAnswers);
           backContent.appendChild(nextButton);
           if (currentQuestionIndex == amount -1 ){
-            nextButton.innerHTML = "Result";
+            nextButton.innerHTML = "Finish";
           };
          
           })
@@ -243,8 +252,33 @@ var save_data = () => {
   else {
     saved.push(player);
   }
+  saved = organize(saved);
   localStorage.setItem("trivia_save", JSON.stringify(saved));
 };
+
+var organize = function(items) {
+  var place_holder;
+
+  for(outer_loop = 0; outer_loop < items.length; outer_loop++)
+  {
+      for(inner_loop = outer_loop+1; inner_loop < items.length; inner_loop++)
+      {
+          if(items[inner_loop].correct > items[outer_loop].correct)
+          {
+              //change positions
+            place_holder = items[outer_loop];
+            items[outer_loop] = items[inner_loop];
+            items[inner_loop] = place_holder;
+            place_holder = "";
+          }
+      }
+  }
+  if(items.length > 30)
+  {
+     items =  items.slice(0,29);
+  }
+  return items;
+}
 
 var check_save = (saved) => {
   for(var i = 0; i < saved.length; i++)
@@ -262,7 +296,6 @@ function load_save () {
   for(var i = 0; i < saved.length; i++)
   {
     if(check_save(saved) != -1){
-      console.log(check_save(saved));
       games_played = saved[check_save(saved)].played;
       return
     }
@@ -281,3 +314,13 @@ setNextQuestion(global_data);
 resetbtn.addEventListener('click', function(){
   window.location.reload();
 });
+
+// goBack 
+// const goBackBtn = document.getElementById('goBack');
+// goBackBtn.addEventListener('click' () => {
+
+// })
+
+// viewScorebtn.addEventListener('click', function (){
+//   localStorage.getItem (saved)
+// });

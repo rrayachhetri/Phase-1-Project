@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#Qresult {
+    position: relative;
+    width: 100%;
+    top:100px;
+    left: 20px;
+}
+#Viewscores, #player_named {
+     width: 100%;
+     margin-right:200px;
+   }
+
+#logo2 {
+position:relative;
+top: 70px;
+left: 25%;   
+}
+
+ul {
+    font-size: .8em;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+li {
+    list-style: none;
+    margin-bottom: 5px;
+}
