@@ -7,7 +7,7 @@ const questionElement = document.getElementById('question');
 const answerButtonsElement = document.getElementById('answer-buttons');
 const modalEl = document.getElementById("mymodal");
 // resultmodal rabin
-const endModalEl  = document.getElementById("endModal");
+//const endModalEl  = document.getElementById("endModal");
 //
 const gameContainerEl = document.getElementById("game-container");
 const backContent = document.getElementById("card-body");
@@ -20,7 +20,7 @@ const totalPlayed = document.getElementById ("total_games_played");
 const resultmodal = document.getElementById ("result-modal"); 
 const resetbtn = document.getElementById ("Reset");
 // view Score!
-const viewScorebtn = document.getElementById("Viewscore");
+//const viewScorebtn = document.getElementById("Viewscore");
 
 //Global Variable
 let currentQuestionIndex = 0;
@@ -36,22 +36,9 @@ var games_played;
 gameContainerEl.classList.add('hide');
 
 
-function viewScore (){
+// function viewScore (){
 
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+// }
 
 
 // nextButton.id = "next-btn";
@@ -305,6 +292,6 @@ resetbtn.addEventListener('click', function(){
   window.location.reload();
 });
 
-viewScorebtn.addEventListener('click', function (){
-  localStorage.getItem (saved)
-});
+// viewScorebtn.addEventListener('click', function (){
+//   localStorage.getItem (saved)
+// });
