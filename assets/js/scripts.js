@@ -24,7 +24,7 @@ const resetbtn = document.getElementById ("Reset");
 let currentQuestionIndex = 0;
 var gobal_data;
 var amount; 
-//  = document.getElementById("trivia_amount").value; 
+
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
@@ -271,7 +271,6 @@ function load_save () {
   for(var i = 0; i < saved.length; i++)
   {
     if(check_save(saved) != -1){
-      console.log(check_save(saved));
       games_played = saved[check_save(saved)].played;
       return
     }
