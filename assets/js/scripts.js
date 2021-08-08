@@ -19,12 +19,6 @@ const incorrectAnswers = document.getElementById ("incorrectAnswers");
 const totalPlayed = document.getElementById ("total_games_played"); 
 const resultmodal = document.getElementById ("result-modal"); 
 const resetbtn = document.getElementById ("Reset");
-<<<<<<< HEAD
-
-=======
-// view Score!
-//const viewScorebtn = document.getElementById("Viewscore");
->>>>>>> feature/result
 
 //Global Variable
 let currentQuestionIndex = 0;
@@ -34,7 +28,7 @@ var amount;
 var player;
 var correct_answers = 0;
 var incorrect_answers = 0;
-var games_played;
+var games_played = 0;
 
 
 gameContainerEl.classList.add('hide');
@@ -277,7 +271,8 @@ function load_save () {
   for(var i = 0; i < saved.length; i++)
   {
     if(check_save(saved) != -1){
-      games_played = saved[i].played;
+      console.log(check_save(saved));
+      games_played = saved[check_save(saved)].played;
       return
     }
   }
