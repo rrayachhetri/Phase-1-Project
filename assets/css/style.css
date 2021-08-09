@@ -1,7 +1,7 @@
-  
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -22,6 +22,7 @@ body {
     background-color: #DCE1E3;
     font-family: Montserrat, sans-serif;
     width: 100%;
+    position: relative;
     min-height: 100vh;
 }
 
@@ -148,8 +149,10 @@ height: 10%;
 /*End Modal*/
 
 main {
+    margin: 25px 25px;
     padding-top: 10vh;
     padding-left: 25vw;
+    display: flex;
 }
 
 .card_container {
@@ -233,7 +236,7 @@ main {
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: -1;
+    z-index: 1;
     border-radius: 0 0 50% 0;
     background-image: linear-gradient(to bottom left, var(--primary) 10%,
      var(--secondary) 115%);
@@ -279,7 +282,7 @@ main {
 Form {
     transform-style: preserve-3d;
     margin-left: 30px;
-    z-index: -1;
+    z-index: 1;
     margin-top: 23vh;
 }
 
@@ -303,21 +306,7 @@ button {
     background-color: #004E7C;
     width: 500%;
 }
- #Qresult {
-     position: relative;
-     top:200px;
-     left: 600px;
-     background-image: url("assets\img\Logo.png");
 
- }
-
- #logo2 {
-     position:relative;
-     top: 150px;
-     left: 40%;
-     
-
- }
 
 #answer-buttons {
     position: relative;
@@ -341,18 +330,22 @@ button:hover {
 
 footer {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
     background-color: #fefefe;
-    padding: 25px 30px ; 
-    display: flex;
+    padding: 15px 15px ; 
+    left: 0;
+    top:100%;
+    width: 100%; 
+   text-align: center;
+   position: absolute;
+   z-index: 1;
+}
+
+#wrapper {
+    display:flex;
+    flex-wrap: wrap;
     justify-content: center;
     justify-content: space-between;
-    position: fixed;
-   
-    left: 0;
-    bottom: 0;
-    width: 100%; 
-    height: 5%; 
-   text-align: center;
 }
 
 footer img {
@@ -388,8 +381,9 @@ footer img {
    }
   
    #answer-buttons {
-      padding-top: 35px;
+      top:50px;
       padding-bottom: 100px;
+      margin-left: 130px;
    }
  
   #player_name {
@@ -429,9 +423,7 @@ footer img {
 
 /*ipad pro*/
 @media screen and (max-width: 1024px) {
-body {
-    background:url("./assets/img/logo.png")
-}
+
    label {
     font-weight: bold;
     font-size: 1rem;
@@ -443,10 +435,6 @@ body {
       left:150px;
    
     }
-/* 
-   #response-container {
-    margin-right: 10px;
-    border: 3px solid red; */
 
     button {
     color:white;
@@ -462,13 +450,22 @@ body {
     background-color: #004E7C;
 }
 
-#answer-buttons {
+    #answer-buttons {
      position: relative;
-     top: 0px;
-     right: 30px;
-     top:30px;
+     top: 100%;
+     right: 125%;
    }
- 
+   
+    footer {
+     padding: 150px;
+     font-size: 15px;
+     text-align: start;
+  } 
+
+   .footer-content {
+    margin: -120px 20px 15px 0px;
+   }
+
    #start-btn   {
     margin:0;
     margin-top: 37px;
@@ -543,26 +540,11 @@ body {
     object-fit: cover;
 }
 
-#logo2 {
-     position:relative;
-     top: 70px;
-     left: 25%;
-     
- }
 
-#Qresult {
-     position: relative;
-     top:100px;
-     left: 60px;
-     background-image: url("assets\img\Logo.png");
-
- }
- #Viewscores, #player_named {
-      width: 100%;
-      margin-right:200px;
-    }
 
 }
+
+
 /* iphone 6/7/8 plus */
    @media screen and (max-width: 414px) {
 
@@ -574,8 +556,8 @@ body {
 
 #logo {
     position: relative;
-    left: 50px;
-    top: 40px;
+    left: 20px;
+    top: 10px;
 }
 #Qresult {
      position: relative;
@@ -606,7 +588,7 @@ body {
 }
 
    button {
-     width: 30%;
+     width: 40%;
       min-width: 6 rem;
    }
  
@@ -625,8 +607,8 @@ body {
   
    #answer-buttons {
     position: relative;
-    top: 5px;
-    left: 31px;
+    top: 350px;
+    right: 123px;
     
    }
  
@@ -652,22 +634,22 @@ body {
    }
     
 
-    #question-container {
+    #game-container {
        position: relative;
-       left: 18px;
-       width:80%;   
-     
+       text-align: center;
+       
+       right: 90px; 
+       bottom: 25px; 
+       width:40%;
+      height: 60%;    
 }
+
+
  #trivia_amount{
     font-size: 1rem;
     height: 1.2rem;
 }
-.card_container {
-    
-    width: 200px;
-    height: 400px;
-    
-} 
+
 
    .img {
     
@@ -692,27 +674,20 @@ main {
     font-size: 15px;
 }
 
-footer {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #fefefe;
-    padding: 25px 35px ; 
-    display: flex;
-    justify-content: center;
-    justify-content: space-between;
-    position: relative;
-    left: 0;
-    bottom: 0;
-    width: 100%;  
-   text-align: center;
-}
+ footer {
+     padding:10px;
+     font-size: 15px;
+     text-align: center;
+     justify-content: space-around;
+  } 
 
-.footer-content {
-    position: relative;
-    top: 5px;
-}
+   .footer-content {
+    margin:-17px 10px 15px 25px;
+   }
 
+   }
 @media screen and (max-width: 680px) {
 .modal-content {
  width: 100%;
-}
+    }
 }
