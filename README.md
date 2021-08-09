@@ -7,10 +7,9 @@ This project was designed to illustrate the use of HTML, CSS, JavaScr
 
 
 ## Github Repo and Website link 
- [https://github.com/rrayachhetri/Phase-1-Project] 
+ https://github.com/rrayachhetri/Phase-1-Project
  
- [https://rrayachhetri.github.io/Phase-1-Project/](Trivia Master Delux)
-)
+ [https://rrayachhetri.github.io/Phase-1-Project/] (Trivia Master Delux)
 ## features 
 - Two Modals
 - Two APIs
